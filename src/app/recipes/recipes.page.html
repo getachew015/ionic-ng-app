@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>RECIPES</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar color="primary">
+      <ion-title size="large" class="ion-text-uppercase">recipes</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+  <ion-list>
+    <app-recipe-item *ngFor="let recipe of recipes" [recipeItem]="recipe"></app-recipe-item>
+  </ion-list>
+</ion-content>
