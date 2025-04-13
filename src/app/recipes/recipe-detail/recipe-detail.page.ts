@@ -37,7 +37,7 @@ export class RecipeDetailPage implements OnInit {
 
   onDeleteRecipe(){
     this.alertCtrl.create({
-      header: 'Deleting A Recipe!',
+      header: 'Delete A Recipe',
       message: 'Do You Really Want To Delete This Recipe?',
       buttons: [
         {

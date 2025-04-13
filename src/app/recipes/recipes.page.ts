@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RecipesService } from './recipes.service';
 import { Recipe } from './recipes.model';
 
@@ -8,7 +8,7 @@ import { Recipe } from './recipes.model';
   styleUrls: ['./recipes.page.scss'],
   standalone: false,
 })
-export class RecipesPage implements OnInit {
+export class RecipesPage implements OnInit, OnDestroy {
   
   recipes: Recipe[] = [];
 
@@ -16,6 +16,28 @@ export class RecipesPage implements OnInit {
   }
 
   ngOnInit() {
-    this.recipes = this.recipesService.getRecipes();
+    console.log('RECIPES LOADED');
   }
+
+  ionViewWillEnter(){
+    this.recipes = this.recipesService.getRecipes();
+    console.log('ionViewdWillEnter');
+  }
+
+  ionViewDidEnter(){
+    console.log('ionViewdDidEnter');
+  }
+
+  ionViewWillLeave(){
+    console.log('ionViewWillLeave');
+  }
+
+  ionViewDidLeave(){
+    console.log('ionViewDidLeave');
+  }
+
+  ngOnDestroy(): void {
+    console.log('onDestory');
+  }
+
 }
